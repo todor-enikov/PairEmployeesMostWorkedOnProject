@@ -10,7 +10,7 @@ namespace PairEmployeesMostWorkedOnProject.ConsoleApp
             var pathtoFile = @"C:\Users\ASUS K53SM\Desktop\Employees.txt";
             var manager = new EmployeeManager(pathtoFile);
 
-            manager.CalculateMostWorkedEmployeesOnProject();
+            var result = manager.CalculateMostWorkedEmployeesInProject();
 
         }
     }
