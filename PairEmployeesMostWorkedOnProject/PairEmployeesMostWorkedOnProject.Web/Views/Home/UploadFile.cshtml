@@ -1,0 +1,44 @@
+﻿@model List<MostWorkedEmployeesUnit>
+@{
+    ViewData["Title"] = "UploadFile";
+}
+
+<h2 class="text-center">Data grid result</h2>
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>
+                Employee ID #1
+            </th>
+            <th>
+                Employee ID #2
+            </th>
+            <th>
+                Project ID
+            </th>
+            <th>
+                Days worked together
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model)
+        {
+        <tr>
+            <td>
+                @item.FirstEmployeeId
+            </td>
+            <td>
+                @item.SecondEmployeeId
+            </td>
+            <td>
+                @item.ProjectId
+            </td>
+            <td>
+                @item.DaysWorked
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
