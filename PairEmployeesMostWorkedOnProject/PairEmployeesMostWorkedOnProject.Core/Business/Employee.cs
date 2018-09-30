@@ -6,23 +6,23 @@ namespace PairEmployeesMostWorkedOnProject.Core.Business
 {
     public class Employee
     {
-        private int employeeID;
+        private int employeeId;
 
         private DateTime dateFrom;
 
         private DateTime dateTo;
 
-        public Employee(int employeeID, DateTime dateFrom, DateTime dateTo)
+        public Employee(int employeeId, DateTime dateFrom, DateTime dateTo)
         {
-            this.EmployeeID = employeeID;
+            this.EmployeeId = employeeId;
             this.DateFrom = dateFrom;
             this.DateTo = dateTo;
         }
 
-        public int EmployeeID
+        public int EmployeeId
         {
-            get { return this.employeeID; }
-            set { this.employeeID = value; }
+            get { return this.employeeId; }
+            set { this.employeeId = value; }
         }
 
         public DateTime DateFrom

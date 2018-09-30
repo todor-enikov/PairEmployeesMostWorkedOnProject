@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PairEmployeesMostWorkedOnProject.Core.Business
 {
-    public class MostWorkedEmployeesResult
+    public class MostWorkedEmployeesUnit
     {
         private int firstEmployeeId;
 
@@ -14,7 +14,7 @@ namespace PairEmployeesMostWorkedOnProject.Core.Business
 
         private double daysWorked;
 
-        public MostWorkedEmployeesResult(int firstEmployeeId, int secondEmployeeId, int projectId, double daysWorked)
+        public MostWorkedEmployeesUnit(int firstEmployeeId, int secondEmployeeId, int projectId, double daysWorked)
         {
             this.FirstEmployeeId = firstEmployeeId;
             this.SecondEmployeeId = secondEmployeeId;
