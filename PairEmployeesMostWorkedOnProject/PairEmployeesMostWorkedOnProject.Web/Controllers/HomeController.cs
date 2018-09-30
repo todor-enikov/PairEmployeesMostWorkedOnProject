@@ -24,21 +24,32 @@ namespace PairEmployeesMostWorkedOnProject.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadFile(IFormFile file)
         {
-            var resourceFolderPath = Path.GetFullPath("Resources\\");
-            if (file.Length > 0)
+            if (file != null)
             {
-                using (var stream = new FileStream(resourceFolderPath + file.FileName, FileMode.Create))
+                var resourceFolderPath = Path.GetFullPath("Resources\\");
+                if (file.Length > 0)
                 {
-                    await file.CopyToAsync(stream);
+                    using (var stream = new FileStream(resourceFolderPath + file.FileName, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
                 }
+                else
+                {
+                    return RedirectToAction(nameof(Error));
+                }
+
+                var filePath = resourceFolderPath + file.FileName;
+
+                var manager = new EmployeeManager(filePath);
+                var result = manager.CalculateMostWorkedEmployeesInProject();
+
+                return View(result);
             }
-
-            var filePath = resourceFolderPath + file.FileName;
-
-            var manager = new EmployeeManager(filePath);
-            var result = manager.CalculateMostWorkedEmployeesInProject();
-
-            return View(result);
+            else
+            {
+                return RedirectToAction(nameof(Error));
+            }
         }
 
         public IActionResult Error()
